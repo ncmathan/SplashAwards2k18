@@ -67,7 +67,7 @@ public class PermissionActivity extends AppCompatActivity {
             for (int i = 0; i < numberOfPermissions; i++) {
                 permissions[i] = permissionsToRequest.get(i);
             }
-            ActivityCompat.requestPermissions(this, permissions, 1234);
+            ActivityCompat.requestPermissions(this, permissions, 123);
         }
     }
 
