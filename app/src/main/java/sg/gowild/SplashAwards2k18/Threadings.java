@@ -1,4 +1,4 @@
-package sg.gowild.sademo;
+package sg.gowild.SplashAwards2k18;
 
 import android.app.Activity;
 

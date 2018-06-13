@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sg.gowild.SplashAwards2k18.Shopping"
+    android:background="#edff87">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Choose your preferred site:"
+        android:textSize="30dp"
+        android:layout_marginTop="15dp"/>
+    <Button
+        android:id="@+id/coldstorage"
+        android:backgroundTint="#dfe0db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:bottomRightRadius="15dp"
+        android:bottomLeftRadius="15dp"
+        android:topLeftRadius="15dp"
+        android:topRightRadius="15dp"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@drawable/coldstorage"
+        android:drawablePadding="5dp"
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:text="Cold Storage"
+        />
+    <Button
+        android:id="@+id/fairprice"
+        android:backgroundTint="#dfe0db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:bottomRightRadius="25dp"
+        android:bottomLeftRadius="25dp"
+        android:topLeftRadius="25dp"
+        android:topRightRadius="25dp"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@drawable/ntuc"
+        android:layout_below="@+id/coldstorage"
+        android:drawablePadding="5dp"
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:text="    FairPrice    "
+        />
+    <Button
+        android:id="@+id/redmart"
+        android:backgroundTint="#dfe0db"
+        android:layout_above="@+id/coldstorage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:bottomRightRadius="15dp"
+        android:bottomLeftRadius="15dp"
+        android:topLeftRadius="15dp"
+        android:topRightRadius="15dp"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@drawable/redmart"
+        android:drawablePadding="5dp"
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:text="    Redmart    "
+        android:layout_marginBottom="10dp"
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/shopping_cart"
+        android:layout_margin="16dp"
+        android:text="view your shopping list"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/fab"
+        android:layout_alignParentBottom="true"
+        android:text="Click to view shopping list"
+        android:layout_marginBottom="20dp"/>
+
+    <WebView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:visibility="invisible"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/listshopping"
+        android:background="#ddddff">
+        <RelativeLayout
+            android:layout_alignParentStart="true"
+            android:id="@+id/x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/closelist"
+                android:text="Return to site"
+                android:textSize="25dp"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/clearlist"
+                android:text="Clear list"
+                android:textSize="25dp"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"/>
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/x"
+            android:layout_above="@+id/y">
+        <LinearLayout
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:isScrollContainer="true">
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 apples"
+                android:checked="false"/>
+
+
+        </LinearLayout>
+        </ScrollView>
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/iteminput"
+                android:hint="Enter shopping item"
+                android:textSize="25dp"
+                android:layout_margin="10dp"/>
+            <Button
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/createitem"
+                android:text="Enter"
+                android:textAllCaps="false"
+                android:textSize="25dp"
+                android:background="#77ff77"
+                android:layout_margin="10dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

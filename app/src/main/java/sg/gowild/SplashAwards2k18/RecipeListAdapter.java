@@ -1,4 +1,4 @@
-package sg.gowild.sademo;
+package sg.gowild.SplashAwards2k18;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

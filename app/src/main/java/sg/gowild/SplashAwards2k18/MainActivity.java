@@ -1,4 +1,4 @@
-package sg.gowild.sademo;
+package sg.gowild.SplashAwards2k18;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -97,6 +97,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(MainActivity.this,RecipeActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        shopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,Shopping.class);
+                startActivity(intent);
             }
         });
     }
@@ -265,11 +272,11 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: Set Sensitivity
         snowboyDetect = new SnowboyDetect(common.getAbsolutePath(), model.getAbsolutePath());
-        snowboyDetect.setSensitivity("0.60");
+        snowboyDetect.setSensitivity("0.4");
         snowboyDetect.applyFrontend(true);
     }
 
-    private void startHotword() {
+    public void startHotword() {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
