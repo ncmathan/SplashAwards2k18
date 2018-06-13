@@ -5,8 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <LinearLayout
+        android:layout_weight="1"
         android:id="@+id/healthvitals"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:background="#3300"
@@ -29,7 +30,8 @@
 
     <LinearLayout
         android:id="@+id/recipe"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:background="#33ff"
@@ -51,7 +53,8 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/shopping"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:background="#ff5555"
@@ -72,7 +75,8 @@
             />
     </LinearLayout>
     <LinearLayout
-        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_margin="10dp">

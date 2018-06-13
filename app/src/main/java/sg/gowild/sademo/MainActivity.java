@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -47,27 +49,24 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     // View Variables
-    private Button button;
-    private TextView textView;
-
+    private Button weight;
+    private Button calories;
+    private LinearLayout healthvitals;
+    private LinearLayout recipe;
+    private LinearLayout shopping;
+    private RelativeLayout appointment;
     // ASR Variables
     private SpeechRecognizer speechRecognizer;
-
     // TTS Variables
     private TextToSpeech textToSpeech;
-
     // NLU Variables
     private AIDataService aiDataService;
-
     // Hotword Variables
     private boolean shouldDetect;
     private SnowboyDetect snowboyDetect;
-
     static {
         System.loadLibrary("snowboy-detect-android");
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,13 +85,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViews() {
         // TODO: Setup Views
-        textView=findViewById(R.id.textview);
-        button=findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        weight= (Button)findViewById(R.id.weight);
+        calories=(Button)findViewById(R.id.calories);
+        healthvitals=(LinearLayout)findViewById(R.id.healthvitals);
+        recipe=(LinearLayout)findViewById(R.id.recipe);
+        shopping=(LinearLayout)findViewById(R.id.shopping);
+        appointment=(RelativeLayout)findViewById(R.id.appointment);
+        recipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //textView.setText("Good morning!);
-                shouldDetect=false;
+                Intent intent=new Intent(MainActivity.this,RecipeActivity.class);
+                startActivity(intent);
+
             }
         });
     }
@@ -151,14 +155,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResults(Bundle results) {
                 List<String> texts = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-                if (texts==null||texts.isEmpty()){
+                /*if (texts==null||texts.isEmpty()){
                     textView.setText("Please try again");
                 }
                 else{
                     String text=texts.get(0);
                     textView.setText(text);
                     startNlu(text);
-                }
+                }*/
             }
 
             @Override
@@ -313,8 +317,4 @@ public class MainActivity extends AppCompatActivity {
         Threadings.runInBackgroundThread(runnable);
     }
 
-    private String getWeather() {
-        // TODO: (Optional) Get Weather Data via REST API
-        return "No weather info";
-    }
 }
