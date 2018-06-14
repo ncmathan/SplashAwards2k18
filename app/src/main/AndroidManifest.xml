@@ -24,7 +24,8 @@
         <activity android:name=".RecipeActivity" />
         <activity android:name=".RecipeListActivity" />
         <activity android:name=".RecipeDetailActivity" />
-        <activity android:name=".Shopping"></activity>
+        <activity android:name=".Shopping" />
+        <activity android:name=".Calories"></activity>
     </application>
 
 </manifest>

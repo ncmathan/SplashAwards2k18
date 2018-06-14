@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sg.gowild.SplashAwards2k18.Calories"
+    android:background="#fcc4c4">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Enter ingredients manually:"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/ingr">
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/voice"
+            android:background="@drawable/mic"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:scrollbars="vertical"
+            android:textSize="15dp"
+            android:minLines="5"
+            android:maxLines="5"
+            android:id="@+id/calorieslist"
+            android:hint="Seperate with comma, be specific:\ne.g:1 large apple,100g roasted chicken"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Submit"
+            android:id="@+id/caloriessubmit1"/>
+    </LinearLayout>
+    <TextView
+        android:layout_below="@+id/ingr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="---------------OR---------------\nEnter calories consumed:"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:id="@+id/txt"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txt">
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:scrollbars="vertical"
+            android:textSize="25dp"
+            android:maxLines="1"
+            android:id="@+id/caloriecount"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Enter"
+            android:id="@+id/caloriessubmit2"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
