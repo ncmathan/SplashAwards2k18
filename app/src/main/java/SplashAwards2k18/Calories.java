@@ -1,167 +1,281 @@
 package SplashAwards2k18;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Calories {
-    private float calories;
-    private float fat;
-    private float saturatedfat;
-    private float monosaturatedfat;
-    private float polysaturatedfat;
-    private float carbs;
-    private float fiber;
-    private float sugars;
-    private float protein;
-    private float sodium;
-    private float calcium;
-    private float magnesium;
-    private float potassium;
-    private float iron;
-    private float zinc;
-    private float phosphorous;
-    private float vitamina;
-    private float vitaminc;
-    private float b1;
-    private float b2;
-    private float b3;
-    private float b6;
-    private float folate;
-    private float vitamine;
-    private float vitamink;
+    private double calories=0;
+    private double fat=0;
+    private double saturatedfat=0;
+    private double transfat=0;
+    private double monosaturatedfat=0;
+    private double polysaturatedfat=0;
+    private double carbs=0;
+    private double fiber=0;
+    private double sugars=0;
+    private double protein=0;
+    private double cholestrol=0;
+    private double sodium=0;
+    private double calcium=0;
+    private double magnesium=0;
+    private double potassium=0;
+    private double iron=0;
+    private double zinc=0;
+    private double phosphorous=0;
+    private double vitamina=0;
+    private double vitaminc=0;
+    private double b1=0;
+    private double b2=0;
+    private double b3=0;
+    private double b6=0;
+    private double b12=0;
+    private double vitamind=0;
+    private double folate=0;
+    private double vitamine=0;
+    private double vitamink=0;
 
-    public static float Scalories=2000;
-    public static float Sfat=70;
-    public static float Ssaturatedfat=24;
-    public static float Smonosaturatedfat;
-    public static float Spolysaturatedfat;
-    public static float Scarbs=300;
-    public static float Sfiber=25;
-    public static float Ssugars=90;
-    public static float Sprotein=50;
-    public static float Ssodium=2300;
-    public static float Scalcium=995;
-    public static float Smagnesium=400;
-    public static float Spotassium=3500;
-    public static float Siron=18;
-    public static float Szinc=15;
-    public static float Sphosphorous=700;
-    public static float Svitamina=900;
-    public static float Svitaminc=60;
-    public static float Sb1=(float)1.5;
-    public static float Sb2=(float)1.7;
-    public static float Sb3=20;
-    public static float Sb6=2;
-    public static float Sfolate=400;
-    public static float Svitamine=400;
-    public static float Svitamink=80;
+    public static double Scalories=2000;
+    public static double Sfat=70;
+    public static double Ssaturatedfat=24;
+    public static double Scarbs=300;
+    public static double Sfiber=25;
+    public static double Ssugars=90;
+    public static double Sprotein=50;
+    public static double Scholestrol=300;
+    public static double Ssodium=2300;
+    public static double Scalcium=995;
+    public static double Smagnesium=400;
+    public static double Spotassium=3500;
+    public static double Siron=18;
+    public static double Szinc=15;
+    public static double Sphosphorous=700;
+    public static double Svitamina=900;
+    public static double Svitaminc=60;
+    public static double Sb1=(double)1.5;
+    public static double Sb2=(double)1.7;
+    public static double Sb3=20;
+    public static double Sb6=2;
+    public static double Sb12=6;
+    public static double Svitamind=400;
+    public static double Sfolate=400;
+    public static double Svitamine=400;
+    public static double Svitamink=80;
 
-    private float weight;
+    private double weight=0;
 
     public Calories(JSONObject json){
-        //continue....
+        try {
+
+            weight = json.getDouble("totalWeight");
+            JSONObject nutrients=json.getJSONObject("totalNutrients");
+            calories=nutrients.getJSONObject("ENERC_KCAL").getDouble("quantity");
+            if(nutrients.has("FAT")){
+                fat=nutrients.getJSONObject("FAT").getDouble("quantity");
+            }
+            if(nutrients.has("FASAT")){
+                saturatedfat=nutrients.getJSONObject("FASAT").getDouble("quantity");
+            }
+            if(nutrients.has("FATRN")){
+                transfat=nutrients.getJSONObject("FATRN").getDouble("quantity");
+            }
+            if(nutrients.has("FAMS")){
+                monosaturatedfat=nutrients.getJSONObject("FAMS").getDouble("quantity");
+            }
+            if(nutrients.has("FAPU")){
+                polysaturatedfat=nutrients.getJSONObject("FAPU").getDouble("quantity");
+            }
+            if(nutrients.has("CHOCDF")){
+                carbs=nutrients.getJSONObject("CHOCDF").getDouble("quantity");
+            }
+            if(nutrients.has("FIBTG")){
+                fiber=nutrients.getJSONObject("FIBTG").getDouble("quantity");
+            }
+            if(nutrients.has("SUGAR")){
+                sugars=nutrients.getJSONObject("SUGAR").getDouble("quantity");
+            }
+            if(nutrients.has("PROCNT")){
+                fiber=nutrients.getJSONObject("PROCNT").getDouble("quantity");
+            }
+            if(nutrients.has("CHOLE")){
+                cholestrol=nutrients.getJSONObject("CHOLE").getDouble("quantity");
+            }
+            if(nutrients.has("NA")){
+                sodium=nutrients.getJSONObject("NA").getDouble("quantity");
+            }
+            if(nutrients.has("CA")){
+                calcium=nutrients.getJSONObject("CA").getDouble("quantity");
+            }
+            if(nutrients.has("MG")){
+                magnesium=nutrients.getJSONObject("MG").getDouble("quantity");
+            }
+            if(nutrients.has("K")){
+                potassium=nutrients.getJSONObject("K").getDouble("quantity");
+            }
+            if(nutrients.has("FE")){
+                iron=nutrients.getJSONObject("FE").getDouble("quantity");
+            }
+            if(nutrients.has("ZN")){
+                zinc=nutrients.getJSONObject("ZN").getDouble("quantity");
+            }
+            if(nutrients.has("P")){
+                phosphorous=nutrients.getJSONObject("P").getDouble("quantity");
+            }
+            if(nutrients.has("VITA_RAE")){
+                vitamina=nutrients.getJSONObject("VITA_RAE").getDouble("quantity");
+            }
+            if(nutrients.has("VITC")){
+                vitaminc=nutrients.getJSONObject("VITC").getDouble("quantity");
+            }
+            if(nutrients.has("THIA")){
+                b1=nutrients.getJSONObject("THIA").getDouble("quantity");
+            }
+            if(nutrients.has("RIBF")){
+                b2=nutrients.getJSONObject("RIBF").getDouble("quantity");
+            }
+            if(nutrients.has("NIA")){
+                b3=nutrients.getJSONObject("NIA").getDouble("quantity");
+            }
+            if(nutrients.has("VITB6")){
+                b6=nutrients.getJSONObject("VITB6A").getDouble("quantity");
+            }
+            if(nutrients.has("FOLDFE")){
+                folate=nutrients.getJSONObject("FOLDFE").getDouble("quantity");
+            }
+            if(nutrients.has("VITB12")){
+                b12=nutrients.getJSONObject("VITB12").getDouble("quantity");
+            }
+            if(nutrients.has("VITK1")){
+                vitamink=nutrients.getJSONObject("VITK1").getDouble("quantity");
+            }
+            if(nutrients.has("VITD")){
+                vitamind=nutrients.getJSONObject("VITD").getDouble("quantity");
+            }
+            if(nutrients.has("VITE")){
+                vitamine=nutrients.getJSONObject("VITE").getDouble("quantity");
+            }
+
+        }  catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    public double getTransfat() {
+        return transfat;
     }
 
-    public float getCalories() {
+    public double getCholestrol() {
+        return cholestrol;
+    }
+
+    public double getB12() {
+        return b12;
+    }
+
+    public double getVitamind() {
+        return vitamind;
+    }
+
+    public double getCalories() {
         return calories;
     }
 
-    public float getFat() {
+    public double getFat() {
         return fat;
     }
 
-    public float getSaturatedfat() {
+    public double getSaturatedfat() {
         return saturatedfat;
     }
 
-    public float getMonosaturatedfat() {
+    public double getMonosaturatedfat() {
         return monosaturatedfat;
     }
 
-    public float getPolysaturatedfat() {
+    public double getPolysaturatedfat() {
         return polysaturatedfat;
     }
 
-    public float getCarbs() {
+    public double getCarbs() {
         return carbs;
     }
 
-    public float getFiber() {
+    public double getFiber() {
         return fiber;
     }
 
-    public float getSugars() {
+    public double getSugars() {
         return sugars;
     }
 
-    public float getProtein() {
+    public double getProtein() {
         return protein;
     }
 
-    public float getSodium() {
+    public double getSodium() {
         return sodium;
     }
 
-    public float getCalcium() {
+    public double getCalcium() {
         return calcium;
     }
 
-    public float getMagnesium() {
+    public double getMagnesium() {
         return magnesium;
     }
 
-    public float getPotassium() {
+    public double getPotassium() {
         return potassium;
     }
 
-    public float getIron() {
+    public double getIron() {
         return iron;
     }
 
-    public float getZinc() {
+    public double getZinc() {
         return zinc;
     }
 
-    public float getPhosphorous() {
+    public double getPhosphorous() {
         return phosphorous;
     }
 
-    public float getVitamina() {
+    public double getVitamina() {
         return vitamina;
     }
 
-    public float getVitaminc() {
+    public double getVitaminc() {
         return vitaminc;
     }
 
-    public float getB1() {
+    public double getB1() {
         return b1;
     }
 
-    public float getB2() {
+    public double getB2() {
         return b2;
     }
 
-    public float getB3() {
+    public double getB3() {
         return b3;
     }
 
-    public float getB6() {
+    public double getB6() {
         return b6;
     }
 
-    public float getFolate() {
+    public double getFolate() {
         return folate;
     }
 
-    public float getVitamine() {
+    public double getVitamine() {
         return vitamine;
     }
 
-    public float getVitamink() {
+    public double getVitamink() {
         return vitamink;
     }
 
-    public float getWeight() {
+    public double getWeight() {
         return weight;
     }
 }
