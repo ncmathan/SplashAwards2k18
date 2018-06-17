@@ -94,6 +94,9 @@ public class Calories {
             if(nutrients.has("SUGAR")){
                 sugars=nutrients.getJSONObject("SUGAR").getDouble("quantity");
             }
+            if(nutrients.has("SUGAR.added")){
+                sugars+=nutrients.getJSONObject("SUGAR.added").getDouble("quantity");
+            }
             if(nutrients.has("PROCNT")){
                 fiber=nutrients.getJSONObject("PROCNT").getDouble("quantity");
             }

@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                 speechRecognizer.startListening(recognizerIntent);
             }
         };
-        Threadings.runInMainThread(this, runnable);
+        //Threadings.runInBackgroundThread( runnable);
     }
 
     private void setupTts() {
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                 startHotword();
             }
         };
-        Threadings.runInBackgroundThread(runnable);
+        //Threadings.runInBackgroundThread(runnable);
     }
 
     private void setupNlu() {
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        Threadings.runInBackgroundThread(runnable);
+        //Threadings.runInBackgroundThread(runnable);
     }
     private void setupHotword() {
         shouldDetect = false;
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
         snowboyDetect.applyFrontend(true);
     }
 
-    public void startHotword() {
+    private void startHotword() {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO: Add action after hotword is detected
             }
         };
-        Threadings.runInBackgroundThread(runnable);
+        //Threadings.runInBackgroundThread(runnable);
     }
 
 }

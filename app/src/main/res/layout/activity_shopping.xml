@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.gowild.SplashAwards2k18.Shopping"
+    tools:context=".Shopping"
     android:background="#edff87">
     <TextView
         android:layout_width="wrap_content"
