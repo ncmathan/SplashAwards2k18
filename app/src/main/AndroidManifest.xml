@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="SplashAwards2k18">
+package="SplashAwards2k18">
 
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/heart"
-        android:label="SplashAwards"
-        android:roundIcon="@drawable/heart"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".PermissionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<application
+    android:allowBackup="true"
+    android:icon="@drawable/heart"
+    android:label="SplashAwards"
+    android:roundIcon="@drawable/heart"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".PermissionActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".RecipeActivity" />
-        <activity android:name=".RecipeListActivity" />
-        <activity android:name=".RecipeDetailActivity" />
-        <activity android:name=".Shopping" />
-        <activity android:name=".CaloriesActivity"></activity>
-    </application>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity android:name=".RecipeActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".RecipeListActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".RecipeDetailActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".Shopping" android:screenOrientation="portrait"/>
+    <activity android:name=".CaloriesActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".Weight" android:screenOrientation="portrait"/>
+    <activity android:name=".Appointment" android:screenOrientation="portrait"/>
+</application>
 
 </manifest>

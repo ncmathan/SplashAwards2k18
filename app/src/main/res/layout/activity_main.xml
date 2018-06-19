@@ -25,10 +25,10 @@
             android:layout_weight="1"/>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:background="@drawable/chart"
             android:scaleType="centerCrop"
-            android:layout_weight="2"
+            android:layout_weight="1.75"
             />
     </LinearLayout>
 
@@ -49,10 +49,10 @@
             android:layout_weight="1"/>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:background="@drawable/food"
             android:scaleType="centerCrop"
-            android:layout_weight="2"
+            android:layout_weight="1.75"
             />
     </LinearLayout>
     <LinearLayout
@@ -72,10 +72,10 @@
             android:layout_weight="1"/>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:background="@drawable/shopping"
             android:scaleType="centerCrop"
-            android:layout_weight="2"
+            android:layout_weight="1.75"
             />
     </LinearLayout>
     <LinearLayout
@@ -86,7 +86,7 @@
         android:layout_margin="10dp">
 
         <LinearLayout
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:background="#88ff88"
@@ -95,25 +95,25 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Track your:"
                 android:textSize="30dp"
                 android:layout_weight="1"/>
             <Button
                 android:id="@+id/calories"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:textSize="20dp"
                 android:text="Calories 🔥"
                 />
             <Button
                 android:id="@+id/weight"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:textSize="20dp"
                 android:text="weight ⚖"
                 />
@@ -137,7 +137,8 @@
                 android:layout_weight="1"
                 android:id="@+id/doc"/>
             <ImageView
-                android:layout_width="100dp"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/doctor"
                 android:scaleType="center"

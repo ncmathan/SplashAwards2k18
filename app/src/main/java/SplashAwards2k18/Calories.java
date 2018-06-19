@@ -3,7 +3,11 @@ package SplashAwards2k18;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
+import java.text.DecimalFormat;
+
+@Parcel
 public class Calories {
     private double calories=0;
     private double fat=0;
@@ -61,9 +65,13 @@ public class Calories {
     public static double Sfolate=400;
     public static double Svitamine=400;
     public static double Svitamink=80;
+    public DecimalFormat formatter = new DecimalFormat("#0.00");
 
     private double weight=0;
-
+    public Calories() {};
+    public Calories(double cals){
+        calories=cals;
+    }
     public Calories(JSONObject json){
         try {
 
@@ -98,7 +106,7 @@ public class Calories {
                 sugars+=nutrients.getJSONObject("SUGAR.added").getDouble("quantity");
             }
             if(nutrients.has("PROCNT")){
-                fiber=nutrients.getJSONObject("PROCNT").getDouble("quantity");
+                protein=nutrients.getJSONObject("PROCNT").getDouble("quantity");
             }
             if(nutrients.has("CHOLE")){
                 cholestrol=nutrients.getJSONObject("CHOLE").getDouble("quantity");
@@ -163,122 +171,158 @@ public class Calories {
         }
     }
     public double getTransfat() {
-        return transfat;
+        return Double.parseDouble(formatter.format(transfat));
     }
 
     public double getCholestrol() {
-        return cholestrol;
+        return Double.parseDouble(formatter.format(cholestrol));
     }
 
     public double getB12() {
-        return b12;
+        return Double.parseDouble(formatter.format(b12));
     }
 
     public double getVitamind() {
-        return vitamind;
+        return Double.parseDouble(formatter.format(vitamind));
     }
 
     public double getCalories() {
-        return calories;
+        return Double.parseDouble(formatter.format(calories));
     }
 
     public double getFat() {
-        return fat;
+        return Double.parseDouble(formatter.format(fat));
     }
 
     public double getSaturatedfat() {
-        return saturatedfat;
+        return Double.parseDouble(formatter.format(saturatedfat));
     }
 
     public double getMonosaturatedfat() {
-        return monosaturatedfat;
+        return Double.parseDouble(formatter.format(monosaturatedfat));
     }
 
     public double getPolysaturatedfat() {
-        return polysaturatedfat;
+        return Double.parseDouble(formatter.format(polysaturatedfat));
     }
 
     public double getCarbs() {
-        return carbs;
+        return Double.parseDouble(formatter.format(carbs));
     }
 
     public double getFiber() {
-        return fiber;
+        return Double.parseDouble(formatter.format(fiber));
     }
 
     public double getSugars() {
-        return sugars;
+        return Double.parseDouble(formatter.format(sugars));
     }
 
     public double getProtein() {
-        return protein;
+        return Double.parseDouble(formatter.format(protein));
     }
 
     public double getSodium() {
-        return sodium;
+        return Double.parseDouble(formatter.format(sodium));
     }
 
     public double getCalcium() {
-        return calcium;
+        return Double.parseDouble(formatter.format(calcium));
     }
 
     public double getMagnesium() {
-        return magnesium;
+        return Double.parseDouble(formatter.format(magnesium));
     }
 
     public double getPotassium() {
-        return potassium;
+        return Double.parseDouble(formatter.format(potassium));
     }
 
     public double getIron() {
-        return iron;
+        return Double.parseDouble(formatter.format(iron));
     }
 
     public double getZinc() {
-        return zinc;
+        return Double.parseDouble(formatter.format(zinc));
     }
 
     public double getPhosphorous() {
-        return phosphorous;
+        return Double.parseDouble(formatter.format(phosphorous));
     }
 
     public double getVitamina() {
-        return vitamina;
+        return Double.parseDouble(formatter.format(vitamina));
     }
 
     public double getVitaminc() {
-        return vitaminc;
+        return Double.parseDouble(formatter.format(vitaminc));
     }
 
     public double getB1() {
-        return b1;
+        return Double.parseDouble(formatter.format(b1));
     }
 
     public double getB2() {
-        return b2;
+        return Double.parseDouble(formatter.format(b2));
     }
 
     public double getB3() {
-        return b3;
+        return Double.parseDouble(formatter.format(b3));
     }
 
     public double getB6() {
-        return b6;
+        return Double.parseDouble(formatter.format(b6));
     }
 
     public double getFolate() {
-        return folate;
+        return Double.parseDouble(formatter.format(folate));
     }
 
     public double getVitamine() {
-        return vitamine;
+        return Double.parseDouble(formatter.format(vitamine));
     }
 
     public double getVitamink() {
-        return vitamink;
+        return Double.parseDouble(formatter.format(vitamink));
     }
 
     public double getWeight() {
-        return weight;
+        return Double.parseDouble(formatter.format(weight));
     }
+
+    @Override
+    public String toString(){
+        return  "Nutritional information:\n"+
+                "Calories       :"+getCalories()+"kcal" +"\n"+
+                "Fat            :"+getFat()+"g" +"\n"+
+                "   saturated   :"+getSaturatedfat()+"g" +"\n"+
+                "   monounsaturated:"+getMonosaturatedfat()+"g" +"\n"+
+                "   polyunsaturated:"+getPolysaturatedfat()+"g" +"\n"+
+                "   trans       :"+getTransfat()+"g" +"\n"+
+                "Carbohydrates  :"+getCarbs()+"g" +"\n"+
+                "Fiber          :"+getFiber()+"g" +"\n"+
+                "Sugars         :"+getSugars()+"g" +"\n"+
+                "Protein        :"+getProtein()+"g" +"\n"+
+                "Cholestrol     :"+getCholestrol()+"mg"+"\n"+
+                "Sodium         :"+getSodium()+"mg"+"\n"+
+                "Calcium        :"+getCalcium()+"mg" +"\n"+
+                "Magnesium      :"+getMagnesium()+"mg" +"\n"+
+                "Potassium      :"+getPotassium()+"mg" +"\n"+
+                "Iron           :"+getIron()+"mg" +"\n"+
+                "Zinc           :"+getZinc()+"mg" +"\n"+
+                "Phosphorus     :"+getPhosphorous()+"mg" +"\n"+
+                "Vitamin A      :"+getVitamina()+"µg" +"\n"+
+                "Vitamin C      :"+getVitaminc()+"mg" +"\n"+
+                "Thiamin (B1)   :"+getB1()+"mg" +"\n"+
+                "Riboflavin (B2):"+getB2()+"mg" +"\n"+
+                "Niacin (B3)    :"+getB3()+"mg" +"\n"+
+                "Vitamin B6     :"+getB6()+"mg" +"\n"+
+                "Folate (total) :"+getFolate()+"µg" +"\n"+
+                "Vitamin B12    :"+getB12()+"µg" +"\n"+
+                "Vitamin D      :"+getVitamind()+"µg" +"\n"+
+                "Vitamin E      :"+getVitamine()+"mg" +"\n"+
+                "Vitamin K      :"+getVitamink()+"µg" ;
+
+    }
+
 }

@@ -11,6 +11,19 @@
         android:id="@+id/mainImageView"
         android:scaleType="centerCrop"
         android:src="@drawable/vegetablebasket" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Favourite Recipes"
+        android:id="@+id/viewFavouriteButton"
+        android:visibility="visible"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -21,32 +34,79 @@
         android:textSize="20sp"
         android:textAlignment="center"
         android:padding="10dp"
-        android:textColor="@color/colorTextIcons" />
+        android:textColor="@color/colorTextIcons"
+        android:layout_below="@+id/viewFavouriteButton"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/ingredient1EditText"
-        android:hint="Enter an ingredient"
-        android:layout_centerVertical="true"
+        android:hint="Enter food item(s)"
+        android:layout_above="@+id/spinner1"
         android:layout_centerHorizontal="true"
         android:background="@color/colorTextIcons"
         android:textSize="25sp"
         android:padding="5dp"
+        android:layout_margin="20dp"
         android:autoText="false" />
+    <Spinner
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="#fff"
+        android:layout_centerInParent="true"
+        android:id="@+id/spinner1"
+        android:spinnerMode="dropdown"/>
+    <Spinner
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="#fff"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/spinner1"
+        android:id="@+id/spinner2"
+        android:layout_margin="20dp"
+        android:spinnerMode="dropdown"/>
 
-    <EditText
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ingredient2EditText"
-        android:hint="Enter an ingredient"
-        android:layout_below="@+id/ingredient1EditText"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorTextIcons"
-        android:layout_marginTop="20dp"
-        android:textSize="25sp"
-        android:padding="5dp"
-        android:autoText="false" />
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/spinner2"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:text="From:"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/calmin"
+            android:background="#fff"
+            android:hint="None"
+            android:textSize="25dp"
+            android:inputType="number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:text=" to: "/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/calmax"
+            android:background="#fff"
+            android:hint="None"
+            android:textSize="25dp"
+            android:inputType="number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:text=" Calories "/>
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"

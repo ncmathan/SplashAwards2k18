@@ -12,9 +12,18 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import SplashAwards2k18.R;
 
 public class Shopping extends AppCompatActivity {
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference dbRef = database.getReference();
+
     private Button fairprice;
     private Button coldstorage;
     private Button redmart;
@@ -46,52 +55,30 @@ public class Shopping extends AppCompatActivity {
         inputitem=(EditText)findViewById(R.id.iteminput);
         createitem=(Button)findViewById(R.id.createitem);
         list=(LinearLayout)findViewById(R.id.list);
-
+        int num=getIntent().getIntExtra("num",0);
+        open(num);
         fairprice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                webView.setVisibility(View.VISIBLE);
-                webView.loadUrl("https://www.fairprice.com.sg");
-                fairprice.setVisibility(View.INVISIBLE);
-                coldstorage.setVisibility(View.INVISIBLE);
-                redmart.setVisibility(View.INVISIBLE);
-                isWebView=true;
+                open(1);
             }
         });
         coldstorage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                webView.setVisibility(View.VISIBLE);
-                webView.loadUrl("https://coldstorage.com.sg");
-                fairprice.setVisibility(View.INVISIBLE);
-                coldstorage.setVisibility(View.INVISIBLE);
-                redmart.setVisibility(View.INVISIBLE);
-                isWebView=true;
+                open(2);
             }
         });
         redmart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                webView.setVisibility(View.VISIBLE);
-                webView.loadUrl("https://redmart.com");
-                fairprice.setVisibility(View.INVISIBLE);
-                coldstorage.setVisibility(View.INVISIBLE);
-                redmart.setVisibility(View.INVISIBLE);
-                isWebView=true;
+                open(3);
             }
         });
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fairprice.setVisibility(View.INVISIBLE);
-                coldstorage.setVisibility(View.INVISIBLE);
-                redmart.setVisibility(View.INVISIBLE);
-                fab.setVisibility(View.INVISIBLE);
-                shoppinglist.setVisibility(View.VISIBLE);
-
-                if(isWebView){
-                webView.setVisibility(View.INVISIBLE);}
-
+                open(4);
             }
         });
         closelist.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +102,7 @@ public class Shopping extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 list.removeAllViews();
+                dbRef.child("shoppinglist").removeValue();
             }
         });
         createitem.setOnClickListener(new View.OnClickListener() {
@@ -125,10 +113,67 @@ public class Shopping extends AppCompatActivity {
                 box.setTextSize(25);
                 box.setChecked(false);
                 list.addView(box);
+                dbRef.child("shoppinglist").push().setValue(inputitem.getText().toString());
 
             }
         });
     }
+
+
+
+    public void open(int num){
+        fairprice.setVisibility(View.INVISIBLE);
+        coldstorage.setVisibility(View.INVISIBLE);
+        redmart.setVisibility(View.INVISIBLE);
+        if(num==0){
+            fairprice.setVisibility(View.VISIBLE);
+            coldstorage.setVisibility(View.VISIBLE);
+            redmart.setVisibility(View.VISIBLE);
+        }
+        if(num==1){//Fairprice
+            webView.loadUrl("https://www.fairprice.com.sg");
+            webView.setVisibility(View.VISIBLE);
+            isWebView=true;
+        }
+        else if(num==2){//ColdStorage
+            webView.loadUrl("https://coldstorage.com.sg");
+            webView.setVisibility(View.VISIBLE);
+            isWebView=true;
+        }
+        else if(num==3){
+            webView.loadUrl("https://redmart.com");
+            webView.setVisibility(View.VISIBLE);
+            isWebView=true;
+        }
+        else if(num==4){
+            fab.setVisibility(View.INVISIBLE);
+            shoppinglist.setVisibility(View.VISIBLE);
+
+            if(isWebView){
+                webView.setVisibility(View.INVISIBLE);}
+            list.removeAllViews();
+            dbRef.child("shoppinglist").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for(DataSnapshot child : dataSnapshot.getChildren()){
+                        CheckBox box=new CheckBox(getApplicationContext());
+                        box.setText(child.getValue().toString());
+                        box.setTextSize(25);
+                        box.setChecked(false);
+                        list.addView(box);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    //Do nothing
+                }
+            });
+        }
+    }
+
+
+
 
     @Override
     public void onBackPressed() {

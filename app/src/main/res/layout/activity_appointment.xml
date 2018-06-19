@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Appointment"
+    android:background="#eeeeee">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/apptlayout">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Doctor's comments"
+        android:textSize="18dp"
+        android:id="@+id/doctorcomment"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="18dp"
+        android:text="Appointment Status"
+        android:textAllCaps="false"
+        android:id="@+id/status"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reason for Appointment:"
+        android:layout_below="@+id/doctorcomment"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:id="@+id/appttxt"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:minLines="5"
+        android:maxLines="5"
+        android:isScrollContainer="true"
+        android:layout_below="@+id/appttxt"
+        android:layout_margin="10dp"
+        android:background="#dddddd"
+        android:id="@+id/reason"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Appointment:"
+        android:layout_below="@+id/reason"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:id="@+id/appttxt2"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appttxt2"
+        android:maxLines="1"
+        android:background="#dddddd"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:id="@+id/date"
+        android:hint="Click to choose"
+        android:focusable="false"
+        android:clickable="true"
+        android:inputType="none"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time of appointment:"
+        android:layout_below="@+id/date"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:id="@+id/appttxt3"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appttxt3"
+        android:maxLines="1"
+        android:background="#dddddd"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:id="@+id/time"
+        android:hint="Click to choose"
+        android:focusable="false"
+        android:clickable="true"
+        android:inputType="none"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:text="Create Appointment"
+        android:id="@+id/createappointment"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="25dp"
+        android:visibility="invisible"
+        android:id="@+id/appointementtext"/>
+
+</RelativeLayout>

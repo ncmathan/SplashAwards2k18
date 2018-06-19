@@ -7,52 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".CaloriesActivity"
     android:background="#fcc4c4">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/calorielayout">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/reviewcals"
+        android:textAllCaps="false"
+        android:text="Review Calories Consumed"
+        android:textSize="25dp"
+        android:background="#99dd44"/>
     <TextView
+        android:layout_below="@+id/reviewcals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Enter ingredients manually:"
-        android:layout_marginTop="20dp"
-        android:textSize="25dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:id="@+id/ingr">
-        <Button
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/voice"
-            android:background="@drawable/mic"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:isScrollContainer="true"
-            android:scrollbars="vertical"
-            android:textSize="15dp"
-            android:minLines="5"
-            android:maxLines="5"
-            android:id="@+id/calorieslist"
-            android:hint="Seperate with comma, be specific:\ne.g:1 large apple,100g roasted chicken"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="Submit"
-            android:id="@+id/caloriessubmit1"/>
-    </LinearLayout>
-    <TextView
-        android:layout_below="@+id/ingr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="---------------OR---------------\nEnter calories consumed:"
+        android:text="Enter an ingredient:"
         android:layout_marginTop="20dp"
         android:textSize="25dp"
-        android:id="@+id/txt"/>
+        android:textColor="#000"/>
+
+    <RelativeLayout
+        android:id="@+id/ingr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="111dp">
+        <Button
+            android:id="@+id/info"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/calorieslist"
+            android:background="@drawable/info"/>
+
+        <EditText
+            android:id="@+id/calorieslist"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:hint="E.g. 5 large apples"
+            android:isScrollContainer="true"
+            android:maxLines="1"
+            android:minLines="1"
+            android:scrollbars="vertical"
+            android:textSize="20dp"
+            android:layout_marginRight="15dp"/>
+
+        <Button
+            android:id="@+id/caloriessubmit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/calorieslist"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---------------OR---------------\nEnter calories consumed:"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:textSize="25dp"
+        android:id="@+id/txt"
+        android:textColor="#000"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,6 +91,14 @@
             android:textSize="25dp"
             android:maxLines="1"
             android:id="@+id/caloriecount"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/kcal"
+            android:text="kcal"
+            android:textSize="25dp"
+            android:textColor="#000"
+            android:layout_marginRight="15dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,6 +106,16 @@
             android:text="Enter"
             android:id="@+id/caloriessubmit2"/>
     </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/caloriesdetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="16dp"
+        android:visibility="invisible" />
 
 
 
